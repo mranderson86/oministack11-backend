@@ -13,5 +13,7 @@ routes.post("/ongs", OngController.create);
 routes.get("/incidents", IncidentController.index);
 // Cadastra uma nova ONG
 routes.post("/incidents", IncidentController.create);
+// Excluir um incidente
+routes.delete("/incidents/:id", IncidentController.delete);
 
 module.exports = routes;
