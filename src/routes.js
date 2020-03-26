@@ -7,14 +7,14 @@ const SessionController = require("./controller/SessionController");
 const routes = express.Router();
 
 // Login do usuário
-routes.post("/session", SessionController.create);
+routes.post("/sessions", SessionController.create);
 
 // Lista todas as ONGS
 routes.get("/ongs", OngController.index);
 // Cadastra uma nova ONG
 routes.post("/ongs", OngController.create);
 
-routes.get("/profile", ProfileController.index);
+routes.get("/profiles", ProfileController.index);
 
 // Lista todas as ONGS
 routes.get("/incidents", IncidentController.index);
