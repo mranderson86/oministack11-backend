@@ -50,8 +50,16 @@ module.exports = {
     const { id } = request.params;
     const ong_id = request.headers.authorization;
 
+    //const incident = await connection("incidents")
+    //  .where("id", id)
+    //  .select("ong_id");
+    //  .first();
+
     const incident = await connection("incidents")
-      .where("id", id)
+      .where({
+        id: id,
+        ong_id: ong_id
+      })
       .select("ong_id")
       .first();
 
@@ -60,7 +68,10 @@ module.exports = {
     }
 
     await connection("incidents")
-      .where("id", id)
+      .where({
+        id: id,
+        ong_id: ong_id
+      })
       .delete();
 
     return response.status(204).send();
