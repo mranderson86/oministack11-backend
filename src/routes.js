@@ -8,6 +8,13 @@ const SessionController = require("./controller/SessionController");
 
 const routes = express.Router();
 
+// Página Inicial
+routes.get("/", (request, response) => {
+  response.json({
+    home: "Api is working"
+  });
+});
+
 // Login do usuário
 // Validação do Id de autenticação da ONG
 routes.post(

@@ -56,16 +56,18 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      host: "trackingtech.cksdalfzup7w.sa-east-1.rds.amazonaws.com",
+      port: "5432",
+      database: "bethehero",
+      user: "mranderson86",
+      password: "mranderson86"
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      directory: "./src/database/migrations"
     }
   }
 };
