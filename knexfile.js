@@ -4,7 +4,6 @@ module.exports = {
   development: {
     client: "postgresql",
     connection: {
-      //filename: './dev.sqlite3'
       host: "trackingtech.cksdalfzup7w.sa-east-1.rds.amazonaws.com",
       port: "5432",
       database: "bethehero",
@@ -16,7 +15,25 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: "./src/migrations"
+      directory: "./src/database/migrations"
+    }
+  },
+
+  test: {
+    client: "postgresql",
+    connection: {
+      host: "trackingtech.cksdalfzup7w.sa-east-1.rds.amazonaws.com",
+      port: "5432",
+      database: "test",
+      user: "mranderson86",
+      password: "mranderson86"
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: "./src/database/migrations"
     }
   },
 

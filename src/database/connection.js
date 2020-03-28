@@ -1,7 +1,11 @@
 const knex = require("knex");
-
 const configuration = require("../../knexfile");
 
-const connnection = knex(configuration.development);
+// Error - Rever
+// const env = process.env.NODE_ENV;
+// const config = env === "test" ? configuration.test : configuration.development;
+
+const config = configuration.test;
+const connnection = knex(config);
 
 module.exports = connnection;
