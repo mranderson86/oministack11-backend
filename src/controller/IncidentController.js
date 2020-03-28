@@ -5,10 +5,8 @@ module.exports = {
   // lista todos os incidentes
   async index(request, response) {
     // paginação de dados
-    const { page = 1 } = request.body;
-
+    const { page = 1 } = request.query;
     const [count] = await connection("incidents").count();
-
     const incidents = await connection("incidents")
       .join("ongs", "ongs.id", "=", "incidents.ong_id")
       .limit(5)
